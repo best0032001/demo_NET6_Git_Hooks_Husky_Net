@@ -1,0 +1,1 @@
+# demo_NET6_Git_Hooks_Husky_Net
