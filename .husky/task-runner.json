@@ -13,6 +13,13 @@
          "args": ["husky", "exec", ".husky/csx/commit-lint.csx", "--args", "${args}"]
       },
       {
+         "name": "dotnet-format",
+         "command": "dotnet",
+         "group": "pre-commit",
+         "args": ["format", "--include" , "${staged}"],
+         "include": ["**/*.cs"]
+      },
+      {
          "name": "echo staged files",
          "pathMode": "absolute",
          "command": "cmd",
