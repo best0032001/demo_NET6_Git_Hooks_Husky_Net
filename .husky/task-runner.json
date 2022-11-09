@@ -8,6 +8,20 @@
    ],
    "tasks": [
       {
+         "name": "echo staged files",
+         "pathMode": "absolute",
+         "command": "cmd",
+         "group": "pre-commit",
+         "args": [ "/c", "echo", "${staged}"]
+      },
+      {
+         "name": "commit-format-linter",
+         "command": "dotnet",
+         "group": "pre-commit",
+         "args": ["husky", "exec", ".husky/csx/format-lint.csx", "--args", "${staged}"],
+         "include": ["**/*.cs"]
+      },
+      {
          "name": "commit-message-linter",
          "command": "dotnet",
          "args": ["husky", "exec", ".husky/csx/commit-lint.csx", "--args", "${args}"]
@@ -18,13 +32,6 @@
          "group": "pre-commit",
          "args": ["format", "--include" , "${staged}"],
          "include": ["**/*.cs"]
-      },
-      {
-         "name": "echo staged files",
-         "pathMode": "absolute",
-         "command": "cmd",
-         "group": "pre-commit",
-         "args": [ "/c", "echo", "${staged}"],
       }
    ]
 }
