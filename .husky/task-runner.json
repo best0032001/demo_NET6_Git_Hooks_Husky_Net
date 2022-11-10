@@ -8,6 +8,12 @@
    ],
    "tasks": [
       {
+         "name": "dotnet-build",
+         "command": "dotnet",
+         "group": "pre-commit",
+         "args": ["build"]
+      },
+      {
          "name": "echo staged files",
          "pathMode": "absolute",
          "command": "cmd",
