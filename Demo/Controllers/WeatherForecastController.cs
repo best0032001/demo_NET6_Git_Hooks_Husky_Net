@@ -22,6 +22,7 @@ namespace Demo.Controllers
       public IEnumerable<WeatherForecast> Get()
       {
 
+
          IList<WeatherForecast> forecasts = new List<WeatherForecast>();
 
          forecasts.ToList();
